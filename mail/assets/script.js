@@ -6,7 +6,7 @@ stampa un messaggio appropriato sull’esito del controllo.*/
 // Chiedere la email all'utente
 const userEmail = prompt("Inserisci la tua email");
 
-// Controllo della lista per accesso
+// Controllo della lista per accesso (Arrey)
 const subscribers = [
     'Rudolf@live.it',
     'Christian@live.it',
@@ -16,23 +16,32 @@ const subscribers = [
     'Massimo@live.it',
     'Pietro@live.it',
 ];
-console.log(subscribers);
 
-let flag = 0
+// Variabile per selezionare la mail nell'indice e di default è false
+let flag = 0;
 
-// Esito del controllo
+// Esito del controllo (con ciclo for)
+
+/*RIPETI finchè è vero che i < subscribers.length
+    SE userEmail == subscribers[i]
+        stampo che ho trovato la mail 
+    FINE SE
+        incrementare i
+    FINE CICLO
+*/
 
 for (let i = 0; i < subscribers.length; i++) {
-
-    if (userEmail == subscribers[i]) {
-        console.log(`L'email è valida`);
-        alert (`L'email è valida`);
-        flag = 1
+    console.log(subscribers[i]);
+    if (userEmail === subscribers[i]) {
+        // Qui usiamo la variabile flag che modifica il valore in true
+        flag = 1;
     }
 }
 
-if (flag === 0) {
-    // non c'è nell'array
+if (flag) { // Variabile flag modificata all'interno del ciclo (true). c'è nell'array
+    console.log(`L'email è valida`);
+    alert (`L'email è valida`);
+} else { // Variabile non modificata (false). non c'è nell'array
     console.log(`L'email non è valida`);
     alert (`L'email non è valida`);
 }
