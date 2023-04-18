@@ -34,6 +34,6 @@ for (let i = 0; i < subscribers.length; i++) {
 if (flag === 0) {
     // non c'è nell'array
     console.log(`L'email non è valida`);
-    alert ('Email non valida');
+    alert (`L'email non è valida`);
 }
 
